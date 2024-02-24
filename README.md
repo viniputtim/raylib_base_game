@@ -1,4 +1,4 @@
-# raylib_base_game
+# Raylib Base Game
 
 Base game structure with Raylib and C++.
 
