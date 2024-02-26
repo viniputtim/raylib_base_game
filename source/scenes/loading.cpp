@@ -20,8 +20,11 @@ Loading::~Loading()
 
 void Loading::check_events()
 {
-    if (IsMouseButtonReleased(0) && this->scheduled_event != nullptr) {
-        this->scheduled_event->quit();
+    if (IsMouseButtonReleased(0)) {
+        if (this->scheduled_event != nullptr) {
+            this->scheduled_event->quit();
+        }
+
         this->game->set_scene("main menu");
     }
 }
