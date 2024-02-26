@@ -7,5 +7,5 @@ class to store scheduled events and two functions to create events:
 `set_timeout` and `set_interval`.
 
 <div text-align="center">
-    <img alt="screenshot" src="docs/screenshot.jpg"/>
+    <img alt="screenshot" src="docs/screenshot.png"/>
 </div>
