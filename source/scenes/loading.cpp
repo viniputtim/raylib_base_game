@@ -1,11 +1,14 @@
 # include <raylib.h>
-# include "loading.hpp"
 # include "game.hpp"
+# include "loading.hpp"
 
 
 Loading::Loading(Game *game) : Scene(game)
 {
-
+    this->scheduled_event = this->game->set_timeout(5, [this]() {
+        this->game->set_scene("main menu");
+        this->game->destroy_scene("loading");
+    });
 }
 
 
@@ -17,7 +20,10 @@ Loading::~Loading()
 
 void Loading::check_events()
 {
-
+    if (IsMouseButtonReleased(0) && this->scheduled_event != nullptr) {
+        this->scheduled_event->quit();
+        this->game->set_scene("main menu");
+    }
 }
 
 

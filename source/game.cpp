@@ -1,9 +1,16 @@
 # include <raylib.h>
 # include "game.hpp"
+# include "level_one.hpp"
+# include "loading.hpp"
+# include "main_menu.hpp"
 
 
 Game::Game()
 {
+    this->scenes["loading"] = std::make_shared<Loading> (this);
+    this->scenes["main menu"] = std::make_shared<MainMenu> (this);
+    this->scenes["level one"] = std::make_shared<LevelOne> (this);
+
     this->set_scene("loading");
 }
 
@@ -70,7 +77,7 @@ void Game::draw()
     this->scene->draw();
 
     if (this->show_fps_counter) {
-        DrawFPS(10, 10);
+        DrawFPS(0, 0);
     }
 
     EndDrawing();

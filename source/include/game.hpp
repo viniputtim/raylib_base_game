@@ -7,7 +7,6 @@
 # include <string>
 # include <vector>
 # include <raylib.h>
-# include "loading.hpp"
 # include "scene.hpp"
 # include "scheduled_event.hpp"
 
@@ -18,10 +17,8 @@ private:
     bool running {true};
     bool show_fps_counter {false};
     std::shared_ptr<Scene> scene;
-    std::map<std::string, std::shared_ptr<Scene>> scenes {
-        {"loading", std::make_shared<Loading> (this)}
-    };
-    std::vector<std::unique_ptr<ScheduledEvent>> scheduled_events;
+    std::map<std::string, std::shared_ptr<Scene>> scenes;
+    std::vector<std::shared_ptr<ScheduledEvent>> scheduled_events;
 
     void check_scheduled_events();
     void check_events();
@@ -38,24 +35,28 @@ public:
 
 
     template<typename Function, typename ...Args>
-    void set_timeout(float seconds, Function function, Args ...args)
+    std::shared_ptr<ScheduledEvent> set_timeout(float seconds, Function function, Args ...args)
     {
-        std::unique_ptr<ScheduledEvent> scheduled_event = std::make_unique<ScheduledEvent> (
+        std::shared_ptr<ScheduledEvent> scheduled_event = std::make_shared<ScheduledEvent> (
             false, seconds, function, args...
         );
 
-        this->scheduled_events.push_back(std::move(scheduled_event));
+        this->scheduled_events.push_back(scheduled_event);
+
+        return scheduled_event;
     }
 
 
     template<typename Function, typename ...Args>
-    void set_interval(float seconds, Function function, Args ...args)
+    std::shared_ptr<ScheduledEvent> set_interval(float seconds, Function function, Args ...args)
     {
-        std::unique_ptr<ScheduledEvent> scheduled_event = std::make_unique<ScheduledEvent> (
+        std::shared_ptr<ScheduledEvent> scheduled_event = std::make_shared<ScheduledEvent> (
             true, seconds, function, args...
         );
 
-        this->scheduled_events.push_back(std::move(scheduled_event));
+        this->scheduled_events.push_back(scheduled_event);
+
+        return scheduled_event;
     }
 };
 

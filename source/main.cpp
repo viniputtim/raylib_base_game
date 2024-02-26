@@ -4,9 +4,9 @@
 
 int main(int argc, char *argv[])
 {
-    InitWindow(800, 600, "Game");
+    InitWindow(0, 0, "Game");
     InitAudioDevice();
-    // ToggleFullscreen();
+    ToggleFullscreen();
     SetMasterVolume(0.75);
     Game game;
     game.run();

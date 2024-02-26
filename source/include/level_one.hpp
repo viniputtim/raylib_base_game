@@ -1,21 +1,18 @@
-# ifndef LOADING_HPP
-# define LOADING_HPP
+# ifndef LELVEL_ONE_HPP
+# define LELVEL_ONE_HPP
 
-# include <memory>
 # include <raylib.h>
 # include "scene.hpp"
-# include "scheduled_event.hpp"
 
 
-class Loading : public Scene
+class LevelOne : public Scene
 {
 private:
-    std::shared_ptr<ScheduledEvent> scheduled_event;
     Texture2D raylib_logo {LoadTexture("../assets/graphics/raylib_logo.png")};
 
 public:
-    Loading(Game *game);
-    ~Loading();
+    LevelOne(Game *game);
+    ~LevelOne();
     void check_events() override;
     void update() override;
     void draw() override;
