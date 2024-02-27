@@ -1,7 +1,4 @@
-# include <raylib.h>
-# include "game.hpp"
 # include "main_menu.hpp"
-# include "scene.hpp"
 
 
 MainMenu::MainMenu(Game *game) : Scene(game)

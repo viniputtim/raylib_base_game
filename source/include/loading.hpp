@@ -1,8 +1,10 @@
 # ifndef LOADING_HPP
 # define LOADING_HPP
 
+
 # include <memory>
 # include <raylib.h>
+# include "game.hpp"
 # include "scene.hpp"
 # include "scheduled_event.hpp"
 

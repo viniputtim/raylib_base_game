@@ -1,7 +1,9 @@
 # ifndef MAIN_MENU_HPP
 # define MAIN_MENU_HPP
 
+
 # include <raylib.h>
+# include "game.hpp"
 # include "scene.hpp"
 
 

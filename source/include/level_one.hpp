@@ -1,14 +1,17 @@
 # ifndef LELVEL_ONE_HPP
 # define LELVEL_ONE_HPP
 
+
+# include <array>
 # include <raylib.h>
+# include "game.hpp"
 # include "scene.hpp"
 
 
 class LevelOne : public Scene
 {
 private:
-    Texture2D raylib_logo {LoadTexture("../assets/graphics/raylib_logo.png")};
+
 
 public:
     LevelOne(Game *game);

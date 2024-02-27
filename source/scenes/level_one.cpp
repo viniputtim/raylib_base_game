@@ -1,7 +1,4 @@
-# include <raylib.h>
-# include "game.hpp"
 # include "level_one.hpp"
-# include "scene.hpp"
 
 
 LevelOne::LevelOne(Game *game) : Scene(game)

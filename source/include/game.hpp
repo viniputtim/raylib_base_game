@@ -7,6 +7,9 @@
 # include <string>
 # include <vector>
 # include <raylib.h>
+# include "level_one.hpp"
+# include "loading.hpp"
+# include "main_menu.hpp"
 # include "scene.hpp"
 # include "scheduled_event.hpp"
 

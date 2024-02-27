@@ -1,5 +1,3 @@
-# include <raylib.h>
-# include "game.hpp"
 # include "loading.hpp"
 
 

@@ -1,8 +1,4 @@
-# include <raylib.h>
 # include "game.hpp"
-# include "level_one.hpp"
-# include "loading.hpp"
-# include "main_menu.hpp"
 
 
 Game::Game()
